@@ -1,0 +1,44 @@
+{
+  "name": "adobe-extension-template",
+  "version": "1.0.0",
+  "description": "Template for an Adobe Extension",
+  "main": "./src/client-src/",
+  "scripts": {
+    "start": "concurrently \"npm run watch:client\" \"npm run watch:ae\"",
+    "watch:client": "webpack --config ./webpack.config.js --mode development --watch",
+    "watch:ae": "webpack --config ./webpack.extendscript.config.js --mode development --watch",
+    "build": "npm run build:client && npm run build:ae",
+    "build:client": "webpack --config ./webpack.config.js --mode production",
+    "build:ae": "webpack --config ./webpack.extendscript.config.js --mode production",
+    "deploy:dev": "node ./build-scripts/deploy.js development",
+    "deploy:prod": "node ./build-scripts/deploy.js production",
+    "zxp": "node ./build-scripts/archive.js"
+  },
+  "keywords": [
+    "Adobe",
+    "Extension",
+    "Template"
+  ],
+  "author": "Greg Wakefield",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^7.4.0",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jsxbin": "^2.2.0",
+    "mini-css-extract-plugin": "^2.6.1",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "nodemon": "^2.0.19",
+    "ts-loader": "^9.3.1",
+    "types-for-adobe": "^7.0.6",
+    "typescript": "^4.8.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.0"
+  },
+  "dependencies": {
+    "cep-interface": "^0.6.0",
+    "es5-shim": "^4.6.7"
+  }
+}
