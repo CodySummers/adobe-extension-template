@@ -5,7 +5,7 @@ Bundling template for adobe extensions
 
 `npm start`
 
-This is start webpack in watch mode and any change will get reloaded. 
+This will start webpack in watch mode and any change will get bundled. 
 
 `npm run deploy:dev`
 
