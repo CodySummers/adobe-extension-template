@@ -77,12 +77,14 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: "../CSXS/manifest.xml",
             templateContent: MANIFEST,
-            inject: false
+            inject: false,
+            minify: false
         }),
         new HtmlWebpackPlugin({
             filename: "../.debug",
             templateContent: DEBUG,
-            inject: false
+            inject: false,
+            minify: false
         }),
     ],
 };
